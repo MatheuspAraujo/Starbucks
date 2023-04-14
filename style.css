@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root{
+    --branco: #FFFFFF;
+    --verde: #01734C;
+    --navbar-itens: #FFFFFF;
+    --navbar-selecionado: #B37C43;
+    --navbar-selecionado-risco: #01734C;
+    --background: #01734C;
+    --texto-botao: #FFFFFF;
+    --cor-botao: #00704A;
+}
+
+
+    
+    
+
+html, body {
+       height: 100%; 
+       overflow: hidden;
+       font-family: "itim", sans-serif;
+       background-color: var(--background);
+}
+      
+body {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.logo{
+    height: 50px;
+    width: auto;
+}
+
+#navbar{
+    display: flex;
+    color: var(--navbar-itens);
+    justify-content: center;
+    top: 0px;
+    width: 100%;
+    position: absolute;        /* configuração feita para tornr o circulo um plano de fundo */
+    z-index: 1;
+    
+}
+
+#navbar .navbar-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 80px;
+    
+}
+
+#navbar .navbar-container ul{
+    display: flex;
+    list-style: none;
+    
+}
+
+#navbar .navbar-container ul li{
+    padding: 0 30px;
+    font-size: 1.2em;    
+}
+
+#navbar .navbar-container .navbar-selecionado{   /* musar a cor e adicionar o sublinhado*/
+    color: var(--navbar-selecionado);
+    text-decoration: none;
+    border-bottom: 4px solid var(--navbar-selecionado-risco);
+    padding-bottom: 3px;
+    line-height: 1.5;
+    
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+#circulo {
+    background: var(--branco);
+    position: absolute;
+    height: 200%;
+    width: 290%;
+    background: var(--branco);
+    clip-path: circle(30% at left 30%);
+    top: 0;               /* travar o circulo no topo */
+    z-index: 0;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+.content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+}
+
+.content-container{
+    padding-left: 100px;
+    margin-top: 200px;
+}
+
+.content-container h1{
+    font-weight: 100;
+    font-size: 2.7em;
+}
+
+.content-container p{
+    margin-top: 15px;
+    font-size: 1.5em;
+    line-height: 45px;
+}
+
+.content-container button{
+    margin-top: 30px;
+    padding: 15px 45px;
+    color: var(--texto-botao);
+    background: var(--cor-botao);
+    border-radius: 5px;
+    font-size: 1.3em;
+    font-family: "itim", sans-serif;
+    border-style: none;
+}
+
+.imagem-copo{
+    height: 70vh;
+    width: auto;
+    margin-left: 50px;
+    margin-top: 60px;
+}
+
+
+/* ------------------------------------------------------------------------------------ */
+
+.icone{
+    display: flex;
+    flex-direction: row;
+    margin-right: 15px;
+    padding-top: 50px;
+}
+
+.icone img{
+    margin-top: 20px;
+    border: 4px solid white;
+    border-radius: 50%;
+}
+
+/* -------------------------------------------------------------------------------------*/
+
+.burguer{
+    display: none;
+}
+
+.circulo2{
+    display: none;
+}
+
+/* ----------------------------------------------------------------------------------------- */
+
+@media screen and (max-width: 768px){
+    body{
+        background-color: var(--branco);
+        overflow: auto;
+        overflow-x: hidden;
+    }
+
+    .navbar-item{
+        display: none;
+    }
+
+    .burguer{
+        display: block;
+        padding-top: 30px;
+        padding-right: 25px;
+        text-align: end;
+    }
+
+    .burguer img{
+        width: 25%;
+        height: 50%;
+    }
+
+    .navbar-container img{
+        padding-left: 30px;
+        margin-left: -80px;
+    }
+
+    /* ------------------------------------------- */
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+
+    .content-container{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .content-container h1{
+      margin-top: -20px;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .content-container p{
+        text-align: center;
+        font-size: 1.5em;
+        line-height: 35px;
+        margin-top: 55px;
+    }
+
+    .content-container button{
+        margin-left: 100px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-top: 65px;
+    }
+
+    .content .imagem-copo{
+        width: 150%;
+        margin-top: -50px;
+        transform: rotate(-30deg);
+    }
+
+    .icone{
+        display: block;
+        margin-top: 50px;
+        padding-left: 15px;
+    }
+
+    .icone img{
+        border: 5px solid var(--branco);
+        margin: 0 5px;
+    }
+
+    #circulo2 {
+        display: block;
+        position: absolute;
+        height: 150%;
+        width: 190%;
+        background: var(--verde);
+        clip-path: circle(30% at left 30%);
+        top: 20px;
+        left: 160px;               /* travar o circulo no topo */
+        z-index: -1;
+        transform: rotate(270deg);
+    }
+
+
+
+
+
+    
+
+
+
+    
+
+    
+}
